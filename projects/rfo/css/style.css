@@ -1,0 +1,931 @@
+/* line 1, ../sass/style.scss */
+body {
+  font-family: Arial;
+  font-size: 12px;
+  background: #f2f2f2;
+  color: #333;
+}
+
+/* line 8, ../sass/style.scss */
+.wrapper {
+  width: 960px;
+  margin: 30px auto;
+  background: #f2f2f2;
+  padding: 20px;
+}
+
+/* line 15, ../sass/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 19, ../sass/style.scss */
+.unselectable {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* line 29, ../sass/style.scss */
+.rfo-input {
+  outline: none;
+  border: none;
+  color: #333;
+  background: #f4f4f4;
+  width: 100%;
+  padding: 8px;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 43, ../sass/style.scss */
+.rfo-input-label {
+  color: #666;
+  padding-bottom: 5px;
+  display: block;
+}
+
+/* line 49, ../sass/style.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/***************************/
+/* line 55, ../sass/style.scss */
+.rfo-title {
+  text-align: center;
+  font-size: 22px;
+}
+
+/* line 60, ../sass/style.scss */
+.rfo-progression {
+  width: 265px;
+  height: 39px;
+  background: url(../images/progression-sprite.png) no-repeat;
+  background-position: 0 0;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* line 72, ../sass/style.scss */
+.rfo-progression--2 {
+  background-position: 0 39px;
+}
+
+/* line 76, ../sass/style.scss */
+.rfo-progression::after {
+  content: "department";
+  text-transform: uppercase;
+  color: #666;
+  font-size: 11px;
+  position: absolute;
+  margin-top: 5px;
+  top: 100%;
+  left: -12px;
+  -webkit-transition: 0.5s all;
+}
+
+/* line 91, ../sass/style.scss */
+.rfo-progression--2 {
+  background-position: 0 -39px;
+}
+
+/* line 95, ../sass/style.scss */
+.rfo-progression--2::after {
+  content: "search";
+  left: 50%;
+  margin-left: -20px;
+}
+
+/* line 101, ../sass/style.scss */
+.rfo-progression--3 {
+  background-position: 0 -78px;
+}
+
+/* line 105, ../sass/style.scss */
+.rfo-progression--3::after {
+  content: "create";
+  left: 246px;
+  margin-left: -20px;
+}
+
+/* BTNS */
+/* line 3, ../sass/partials/_buttons.scss */
+.rfo-btn {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+/* line 20, ../sass/partials/_buttons.scss */
+.rfo-btn.rfo-btn--disabled {
+  background-color: #ddd;
+  color: #f9f9f9;
+}
+
+/* line 26, ../sass/partials/_buttons.scss */
+.rfo-btn i {
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0;
+}
+
+/* SEARCH */
+/* line 3, ../sass/partials/_search.scss */
+.rfo-searchbar-wrapper {
+  width: 542px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 10, ../sass/partials/_search.scss */
+.rfo-input-search {
+  background: none;
+  border: none;
+  width: 475px;
+  padding: 9px 10px;
+  margin: 0;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+/* line 24, ../sass/partials/_search.scss */
+.rfo-searchbar-icon {
+  background: #25b695;
+  position: absolute;
+  right: 45px;
+  top: 0;
+}
+
+/* line 31, ../sass/partials/_search.scss */
+.rfo-searchbar-catalog {
+  background: #3498db;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+
+/* SEARCH RESULTS */
+/* line 40, ../sass/partials/_search.scss */
+.rfo-result-wrapper {
+  width: 540px;
+  border: 1px solid #ddd;
+  border-top: 2px solid #ccc;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #f9f9f9;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -webkit-transform: translateY(-20px);
+  display: none;
+}
+
+/* line 56, ../sass/partials/_search.scss */
+.rfo-result-wrapper.active {
+  opacity: 1 !important;
+  -webkit-transform: translateY(0px);
+}
+
+/* line 61, ../sass/partials/_search.scss */
+.rfo-result-wrapper_left, .rfo-result-wrapper_right {
+  float: left;
+}
+
+/* line 65, ../sass/partials/_search.scss */
+.rrw {
+  position: relative;
+  border-bottom: 2px solid #fff;
+  /*border-top:1px solid #ddd;*/
+}
+
+/* line 72, ../sass/partials/_search.scss */
+.rrw-loader {
+  text-align: center;
+  padding: 25px;
+}
+
+/* line 77, ../sass/partials/_search.scss */
+.rrw-loader i {
+  margin-bottom: 10px;
+}
+
+/* line 81, ../sass/partials/_search.scss */
+.rrw:first-child {
+  border-top: none;
+}
+
+/* line 85, ../sass/partials/_search.scss */
+.rrw_arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #3498db;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -8px;
+}
+
+/* line 99, ../sass/partials/_search.scss */
+.rrw_up_arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ccc;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+/* line 113, ../sass/partials/_search.scss */
+.rrw_left {
+  width: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #3498db;
+}
+
+/* line 124, ../sass/partials/_search.scss */
+.rrw_left_label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -6px;
+  margin-left: -12px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 135, ../sass/partials/_search.scss */
+.rrw--catalog {
+  height: 165px;
+  overflow: hidden;
+}
+
+/***************************/
+/* line 142, ../sass/partials/_search.scss */
+.rrw-itemlist {
+  margin: 0;
+  margin-left: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 149, ../sass/partials/_search.scss */
+.rrw-itemlist li {
+  font-size: 18px;
+  padding: 18px 15px 18px 30px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* line 156, ../sass/partials/_search.scss */
+.rrw-itemlist li:hover {
+  background: #ddd;
+}
+
+/* line 160, ../sass/partials/_search.scss */
+.rrw_right .keyword {
+  font-weight: bold;
+}
+
+/* line 164, ../sass/partials/_search.scss */
+.rrw-itemlist-name {
+  display: inline-block;
+  width: 360px;
+}
+
+/* line 169, ../sass/partials/_search.scss */
+.rrw-itemlist-price {
+  display: inline-block;
+  width: 90px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/**** STAPLES ****/
+/* line 178, ../sass/partials/_search.scss */
+.rrw--staples {
+  height: 55px;
+  overflow: hidden;
+}
+
+/* line 183, ../sass/partials/_search.scss */
+.rrw--staples .rrw_left_label {
+  margin-top: -8px;
+  margin-left: -10px;
+}
+
+/* line 188, ../sass/partials/_search.scss */
+.rrw--staples .rrw_left {
+  background-color: #f75147;
+}
+
+/* line 192, ../sass/partials/_search.scss */
+.rrw--staples .rrw_arrow {
+  border-left-color: #f75147;
+}
+
+/* line 196, ../sass/partials/_search.scss */
+.rrw--staples .rrw_right {
+  background: #C64139;
+  height: 60px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 55px;
+}
+
+/**** RECREATE ****/
+/* line 212, ../sass/partials/_search.scss */
+.rrw--recreate {
+  height: 110px;
+  overflow: hidden;
+}
+
+/* line 217, ../sass/partials/_search.scss */
+.rrw--recreate .rrw_left {
+  background-color: #25b695;
+}
+
+/* line 221, ../sass/partials/_search.scss */
+.rrw--recreate .rrw_arrow {
+  border-left-color: #25b695;
+}
+
+/* line 225, ../sass/partials/_search.scss */
+.rrw--recreate .rrw_left_label {
+  margin-top: -8px;
+  margin-left: -16px;
+}
+
+/* line 230, ../sass/partials/_search.scss */
+.rotate {
+  /* Safari */
+  -sand-transform: rotate(-90deg);
+  position: absolute;
+}
+
+/* DEPARTMENT */
+/* line 3, ../sass/partials/_department.scss */
+.rfo-department-wrapper {
+  width: 542px;
+  margin: 0 auto;
+}
+
+/* line 8, ../sass/partials/_department.scss */
+.rfo-input-department {
+  width: 542px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 14, ../sass/partials/_department.scss */
+.rfo-input-department .selectable {
+  background: #fff;
+  height: 38px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+/* line 22, ../sass/partials/_department.scss */
+.rfo-input-department .selectable ul {
+  top: 32px;
+}
+
+/* line 26, ../sass/partials/_department.scss */
+.rfo-input-department .selectable_content {
+  font-size: 16px;
+}
+
+/* line 30, ../sass/partials/_department.scss */
+.btn-department-next {
+  background-color: #25b695;
+  padding: 0 20px;
+  margin-top: 10px;
+  float: right;
+}
+
+/**** CREATE FORM ****/
+/* line 3, ../sass/partials/_create_form.scss */
+.rfo-createform-lineitem {
+  width: 540px;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #e3e3e3;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 16, ../sass/partials/_create_form.scss */
+.rcl-title {
+  background: #cdcdcd;
+  padding: 12px 25px;
+  font-weight: bold;
+  font-size: 14px;
+  font-style: italic;
+  color: #333;
+}
+
+/* line 26, ../sass/partials/_create_form.scss */
+.rcl-content {
+  padding: 15px 25px 10px 25px;
+}
+
+/* line 30, ../sass/partials/_create_form.scss */
+.rcl-footer {
+  /*padding:15px 25px;*/
+  background: #bdbdbd;
+}
+
+/* line 35, ../sass/partials/_create_form.scss */
+.rcl-footer {
+  line-height: 40px;
+  padding-left: 25px;
+}
+
+/* line 40, ../sass/partials/_create_form.scss */
+.rcl-submit-btn {
+  float: right;
+  width: 140px;
+  background: #25b695;
+}
+
+/* line 46, ../sass/partials/_create_form.scss */
+.rcl-cancel-btn {
+  float: right;
+  width: 80px;
+  background: #666;
+}
+
+/* line 52, ../sass/partials/_create_form.scss */
+.rcl-content table {
+  width: 100%;
+}
+
+/* line 56, ../sass/partials/_create_form.scss */
+.rcl-content .input--inline {
+  float: left;
+}
+
+/* line 60, ../sass/partials/_create_form.scss */
+.rcl-content td {
+  padding-bottom: 15px;
+  vertical-align: middle;
+}
+
+/* line 65, ../sass/partials/_create_form.scss */
+.rcl-tr-label td {
+  color: #666;
+  padding-bottom: 5px;
+}
+
+/* line 70, ../sass/partials/_create_form.scss */
+.rcl-product-item {
+  background: #666;
+  color: #fff;
+}
+
+/* QUANTITY */
+/* line 77, ../sass/partials/_create_form.scss */
+.td-quantity .selectable {
+  width: 100px;
+}
+
+/* line 81, ../sass/partials/_create_form.scss */
+.td-quantity .input--inline {
+  width: 130px;
+}
+
+/* PRICE */
+/* line 87, ../sass/partials/_create_form.scss */
+.td-price .selectable {
+  width: 80px;
+}
+
+/* line 91, ../sass/partials/_create_form.scss */
+.td-price .input--inline {
+  width: 159px;
+}
+
+/* line 1, ../sass/partials/_selectable.scss */
+.selectable {
+  display: inline-block;
+  position: relative;
+  background: #eee;
+  cursor: pointer;
+  min-height: 32px;
+  width: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  border: none;
+}
+
+/* line 15, ../sass/partials/_selectable.scss */
+.selectable--hide {
+  clip: rect(0 0 0 0) !important;
+  outline: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* line 29, ../sass/partials/_selectable.scss */
+.selectable--inline {
+  float: left;
+}
+
+/* line 33, ../sass/partials/_selectable.scss */
+.selectable--green {
+  background: #25b695;
+}
+
+/* line 37, ../sass/partials/_selectable.scss */
+.selectable--green .selectable_content {
+  color: #fff;
+}
+
+/* line 42, ../sass/partials/_selectable.scss */
+.selectable:hover .selectable_arrow-container {
+  background: #1E9277;
+}
+
+/* line 46, ../sass/partials/_selectable.scss */
+.selectable label {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #666;
+}
+
+/* line 55, ../sass/partials/_selectable.scss */
+.selectable:after {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 29px;
+  width: 1px;
+  /*border-right: 1px solid #ddd;*/
+}
+
+/* line 65, ../sass/partials/_selectable.scss */
+.selectable:hover:after {
+  display: none;
+}
+
+/* line 69, ../sass/partials/_selectable.scss */
+.selectable_content {
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  padding: 10px 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 82, ../sass/partials/_selectable.scss */
+.selectable ul {
+  display: none;
+  position: absolute;
+  top: 23px;
+  border-bottom: 1px solid #ddd;
+  min-width: 100%;
+  padding-top: 10px;
+  z-index: 99999;
+}
+
+/* line 92, ../sass/partials/_selectable.scss */
+.selectable li {
+  color: #333;
+  padding: 8px 12px;
+  background: #f3f3f3;
+  width: 100%;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* line 103, ../sass/partials/_selectable.scss */
+.selectable li:hover {
+  background: #ddd;
+  color: #333;
+}
+
+/* line 108, ../sass/partials/_selectable.scss */
+.selectable .selected, .selectable .selected:hover {
+  display: inline-block;
+  background: #999;
+  color: #fff;
+}
+
+/* line 114, ../sass/partials/_selectable.scss */
+.selectable_arrow-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background: #25b695;
+}
+
+/* line 123, ../sass/partials/_selectable.scss */
+.selectable_arrow-container:after {
+  left: 50%;
+  top: 50%;
+  margin-left: -6px;
+  margin-top: -2px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* line 136, ../sass/partials/_selectable.scss */
+.selectable_arrow-container:after {
+  border-top-color: #fff;
+  border-width: 6px;
+}
+
+/* line 141, ../sass/partials/_selectable.scss */
+.selectable--placeholder {
+  color: #aaa;
+}
+
+/* line 2, ../sass/partials/_cart.scss */
+.cart-wrapper {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: #252525;
+  z-index: 10;
+  color: #fff;
+}
+
+/* line 14, ../sass/partials/_cart.scss */
+.cart-wrapper__expanded {
+  display: none;
+}
+
+/* line 18, ../sass/partials/_cart.scss */
+.cart-wrapper--expanded {
+  width: 300px;
+}
+/* line 21, ../sass/partials/_cart.scss */
+.cart-wrapper--expanded .cart-wrapper__expanded {
+  display: block;
+}
+
+/* line 26, ../sass/partials/_cart.scss */
+.cwe-title {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0;
+  background: #0a0a0a;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 36, ../sass/partials/_cart.scss */
+.cwe-receipt-edges {
+  position: absolute;
+  bottom: -17px;
+  right: 0;
+  left: 0;
+  height: 17px;
+  background: url(../images/cart_receipt_edges.png) repeat-x;
+}
+
+/* line 46, ../sass/partials/_cart.scss */
+.cart-list {
+  min-height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 52, ../sass/partials/_cart.scss */
+.cart-list li {
+  padding: 10px 50px 10px 15px;
+  background: #444444;
+  border-top: 1px solid #494949;
+  border-bottom: 1px solid #494949;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+/* line 62, ../sass/partials/_cart.scss */
+.cart-list li:first-child {
+  padding-top: 15px;
+}
+/* line 65, ../sass/partials/_cart.scss */
+.cart-list li:first-child .cart-list__btn-return {
+  top: 5px;
+}
+/* line 69, ../sass/partials/_cart.scss */
+.cart-list li:first-child .cart-list__btn-delete {
+  top: 35px;
+}
+
+/* line 74, ../sass/partials/_cart.scss */
+.cart-list__item {
+  font-size: 16px;
+  min-height: 15px;
+}
+
+/* line 80, ../sass/partials/_cart.scss */
+.cart-list .cart-list__item--active {
+  background: #25b695;
+}
+/* line 83, ../sass/partials/_cart.scss */
+.cart-list .cart-list__item--active .cart-list__btn-return {
+  top: 0;
+  background: #188169;
+}
+/* line 89, ../sass/partials/_cart.scss */
+.cart-list .cart-list__item--active .cart-list__price em, .cart-list .cart-list__item--active .cart-list__qty em {
+  color: #166D59;
+}
+
+/* line 95, ../sass/partials/_cart.scss */
+.cart-list__price {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+}
+/* line 101, ../sass/partials/_cart.scss */
+.cart-list__price em {
+  color: #aaa;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 108, ../sass/partials/_cart.scss */
+.cart-list__qty {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+}
+/* line 114, ../sass/partials/_cart.scss */
+.cart-list__qty em {
+  color: #aaa;
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+/* line 121, ../sass/partials/_cart.scss */
+.cart-list__btn {
+  width: 30px;
+  height: 30px;
+  background: #222;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+}
+/* line 134, ../sass/partials/_cart.scss */
+.cart-list__btn:after {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* line 140, ../sass/partials/_cart.scss */
+.cart-list__btn-return {
+  top: 0;
+  background: #25b695;
+  font-family: FontAwesome;
+}
+/* line 146, ../sass/partials/_cart.scss */
+.cart-list__btn-return:after {
+  font-size: 16px;
+  content: "\f040";
+}
+
+/* line 153, ../sass/partials/_cart.scss */
+.cart-list__btn-delete {
+  top: 30px;
+  background: #e74c3c;
+  font-family: FontAwesome;
+}
+/* line 159, ../sass/partials/_cart.scss */
+.cart-list__btn-delete:after {
+  content: "\f00d";
+}
+
+/* line 164, ../sass/partials/_cart.scss */
+.cw-expand-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  padding: 15px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* line 176, ../sass/partials/_cart.scss */
+.cw-expand-btn i {
+  font-size: 28px;
+  color: #fff;
+}
+
+/**********************
+CART SUMMARY
+**********************/
+/* line 186, ../sass/partials/_cart.scss */
+.cart-summary-wrapper {
+  background: #181818;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  padding: 30px 20px;
+}
+
+/* line 198, ../sass/partials/_cart.scss */
+.cart-summary-wrapper .selectable, .cart-summary-wrapper .rfo-input {
+  margin-bottom: 15px;
+}
+
+/* line 202, ../sass/partials/_cart.scss */
+.cart-summary-wrapper .rfo-input-label {
+  color: #fff;
+  font-size: 11px;
+}
+
+/* line 207, ../sass/partials/_cart.scss */
+.csw-total-item {
+  margin-bottom: 10px;
+}
+
+/* line 211, ../sass/partials/_cart.scss */
+.csw-btn-submit {
+  background: #25b695;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 90px;
+  cursor: pointer;
+}

@@ -1,0 +1,162 @@
+/* GLOBALS ********************/
+
+body{
+	font-family:'Open Sans';
+	color:#666;
+}
+
+.red{
+	color:#EE4F3D;
+}
+
+.grey{
+	color:#667A87;
+}
+
+.btn{
+	font-size:16px;
+	padding:10px 20px;
+	color:#667A87;
+
+	border-radius:4px;
+	display:inline-block;
+}
+
+.btn--red{
+	color:#fff;
+	background-color:#EE4F3D;
+}
+
+.band--grey{
+	background:#e6e6e6;
+}
+
+/* HEADER ********************/
+
+.header{
+	height:60px;
+}
+
+.logo{
+	font-size: 24px;
+	line-height:60px;
+	float:left;
+}
+
+.header__auth-wrapper{
+	float:right;
+	margin-top:9px;
+}
+
+.header__auth-wrapper .btn{
+	float:left;
+	margin-left:15px;
+}
+
+/* BANNER ********************/
+
+.banner{
+	height:520px;
+	width:100%;
+	border-bottom:5px solid #EE4F3D;
+
+	background-image: url('../images/banner/landing_banner.jpg');
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-color:#EE4F3D;
+	background-repeat: no-repeat;
+}
+
+.banner__landing{
+	color:#fff;
+	text-align: center;
+
+	padding-top:60px;
+}
+
+.banner__landing h1{
+	font-weight: 700;
+	font-size: 26px;
+	margin-bottom:30px;
+}
+
+.banner__landing h2{
+	font-size:22px;
+	width:650px;
+	margin:0 auto;
+}
+
+.banner__landing hr{
+	width:670px;
+	margin:40px auto;
+}
+
+.banner__landing p{
+	width:500px;
+	margin:0 auto 20px auto;
+
+	font-size:16px;
+}
+
+.banner__landing input{
+	font-weight: normal;
+	font-size:16px;
+
+	height:40px;
+	background:#fff;
+	border:1px solid #ccc;
+
+	border-radius:3px;
+
+	margin-right:15px;
+	width:400px;
+}
+
+/* HOMEPAGE ******************/
+
+.home-features-wrapper{
+	margin:-60px auto 60px auto;
+}
+
+.home-features{
+	padding:0 25px;
+}
+
+.home-features-icon{
+	text-align: center;
+	margin-bottom:20px;
+}
+
+.home-features h4{
+	font-weight:700;
+	text-align:center;
+}
+
+.home-features p{
+	font-size:14px;
+	margin-top:20px;
+	text-align: center;
+
+	line-height:20px;
+}
+
+.home-about-container{
+	padding:60px 0;
+}
+
+.home-about-container h3{
+	font-weight:700;
+}
+
+.home-about-container .seven{
+	padding-right:50px;
+	border-right:1px solid #666;
+}
+
+/* FOOTER ******************/
+
+.footer{
+	background:#667A87;
+
+	height:120px;
+}

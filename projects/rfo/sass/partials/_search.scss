@@ -1,0 +1,235 @@
+/* SEARCH */
+
+.rfo-searchbar-wrapper{
+	width: 542px;
+	margin: 0 auto;
+	position: relative;
+	z-index:10;
+}
+
+input.rfo-input-search{
+	background:none;
+	border:none;
+
+	width:475px;
+	padding:9px 10px;
+	margin:0;
+	outline:none;
+	font-size:16px;
+
+	border:1px solid #ddd;
+	background:#f9f9f9;
+}
+
+.rfo-searchbar-icon{
+	background:#25b695;
+	position:absolute;
+	right:45px;
+	top:0;
+}
+
+.rfo-searchbar-catalog{
+	background:#3498db;
+	position:absolute;
+	right:0px;
+	top:0;
+}
+
+/* SEARCH RESULTS */
+
+.rfo-result-wrapper{
+	width: 540px;
+
+	border: 1px solid #ddd;
+	border-top:2px solid #ccc;
+	margin: 0 auto;
+	margin-top: 10px;
+	background: #f9f9f9;
+	position:relative;
+
+	opacity:0;
+	-webkit-transition: all 0.3s;
+	-webkit-transform: translateY(-20px);
+	display:none;
+}
+
+.rfo-result-wrapper.active{
+	opacity:1 !important;
+	-webkit-transform: translateY(0px);
+}
+
+.rfo-result-wrapper_left, .rfo-result-wrapper_right{
+	float:left;
+}
+
+.rrw{
+	position:relative;
+	border-bottom:2px solid #fff;
+
+	/*border-top:1px solid #ddd;*/
+}
+
+.rrw-loader{
+	text-align: center;
+	padding:25px;
+}
+
+.rrw-loader i{
+	margin-bottom:10px;
+}
+
+.rrw:first-child{
+	border-top:none;
+}
+
+.rrw_arrow{
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	
+	border-left: 8px solid #3498db;
+	position:absolute;
+
+	top:50%;
+	left:100%;
+	margin-top:-8px;
+}
+
+.rrw_up_arrow{
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	
+	border-bottom: 8px solid #ccc;
+	position:absolute;
+
+	top:-10px;
+	left:50%;
+	margin-left:-8px;
+}
+
+.rrw_left{
+	width:40px;
+
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+
+	background: #3498db;
+}
+
+.rrw_left_label{
+	position:absolute;
+	top:50%;
+	left:0;
+	margin-top:-6px;
+	margin-left:-12px;
+	color:#fff;
+	font-weight: bold;
+	font-size:14px;
+}
+
+.rrw--catalog{
+	height: 165px;
+	overflow:hidden;
+}
+
+/***************************/
+
+.rrw-itemlist{
+	margin:0;
+	margin-left:40px;
+	padding:0;
+	list-style: none;	
+}
+
+.rrw-itemlist li{
+	font-size:18px;
+	padding: 18px 15px 18px 30px;
+	border-bottom:1px solid #ddd;
+	cursor: pointer;
+}
+
+.rrw-itemlist li:hover{
+	background:#ddd;
+}
+
+.rrw_right .keyword{
+	font-weight: bold;
+}
+
+.rrw-itemlist-name{
+	display:inline-block;
+	width:360px;
+}
+
+.rrw-itemlist-price{
+	display:inline-block;
+	width:90px;
+	font-size:16px;
+	line-height:18px;
+}
+
+/**** STAPLES ****/
+
+.rrw--staples{
+	height: 55px;
+	overflow:hidden;
+}
+
+.rrw--staples .rrw_left_label{
+	margin-top:-8px;
+	margin-left:-10px;
+}
+
+.rrw--staples .rrw_left{
+	background-color: #f75147;
+}
+
+.rrw--staples .rrw_arrow{
+	border-left-color: #f75147;
+}
+
+.rrw--staples .rrw_right{
+	background:#C64139;
+	height:60px;
+
+	color:#fff;
+	text-transform: uppercase;
+	font-size: 16px;
+
+	cursor: pointer;
+	text-align:center;
+	line-height:55px;
+
+}
+
+/**** RECREATE ****/
+
+.rrw--recreate{
+	height: 110px;
+	overflow:hidden;
+}
+
+.rrw--recreate .rrw_left{
+	background-color: #25b695;
+}
+
+.rrw--recreate .rrw_arrow{
+	border-left-color: #25b695;
+}
+
+.rrw--recreate .rrw_left_label{
+	margin-top:-8px;
+	margin-left:-16px;
+}
+
+.rotate {
+	/* Safari */
+	-sand-transform: rotate(-90deg);
+
+	position:absolute;
+}

@@ -1,0 +1,208 @@
+::selection {
+	background: #ffb7b7; /* Safari */
+}
+
+::-moz-selection {
+	background: #ffb7b7; /* Firefox */
+}
+
+body {
+	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 20px;
+	background: #e8e3dc; /* Old browsers */
+color: #333;
+}
+
+a {
+	text-decoration: none;
+	color: #00a5e2;
+	font-size: 12px;
+}
+
+#home-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-position: fixed;
+}
+
+.card {
+	width: 300px;
+	height: 190px;
+	background: #fff;
+
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	padding: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -95px;
+	border: 1px solid #bbb;
+	border-bottom: 5px solid #33b5e5;
+}
+
+.card h1 {
+	font-size: 14px;
+	padding-bottom: 5px;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #ccc;
+	text-align:left;
+}
+
+.title {
+	float: right;
+	font-size: 12px;
+}
+
+table tr td:first-child {
+	padding-right: 10px;
+}
+
+table td {
+	padding-bottom: 5px;
+}
+
+.pro-title {
+	margin: 10px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+	width: 150px;
+	font-weight: bold;
+}
+
+img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -111px;
+	margin-top: -290px;
+}
+
+/* ============================================================================= */
+.wrapper {
+	width: 860px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 100px;
+	margin: 10px;
+	text-align: center;
+	color: #666;
+}
+
+h2 {
+	text-align: center;
+	margin: 0 0 40px 0;
+	color: #999;
+	text-transform: uppercase;
+}
+
+.doc-tabs {
+	padding-left: 10px;
+}
+
+.doc-tab {
+	background: white;
+	display: inline-block;
+	padding: 8px 15px;
+	border-top: 5px solid #ccc;
+}
+
+.doc-tab:hover {
+	border-top: 5px solid #999;
+	cursor: pointer;
+}
+
+.doc-tab.active {
+	border-color: #09c;
+}
+
+#methods {
+	/*border-color:  #f80;
+	*/
+}
+
+.docs {
+	margin-bottom: 40px;
+}
+
+.doc {
+	background: white;
+	padding: 15px;
+	border: 1px solid #ddd;
+	display: none;
+}
+
+.doc:first-child {
+	display: block;
+}
+
+.doc table {
+	width: 100%;
+	border-collapse: collapse;
+	/*font-family:"Ubuntu";*/
+}
+
+.doc table th {
+	text-align: left;
+	border: 1px solid #ddd;
+	padding: 5px 5px;
+	background: #d9d9d9;
+	color: #333;
+}
+
+.doc table td {
+	border: 1px solid #ddd;
+	padding: 15px 10px;
+	font-size: 12px;
+	vertical-align: top;
+}
+
+.doc table tbody tr:nth-child(2n) {
+	background: #f3f3f3;
+}
+
+.param-line h4{
+	margin:20px 0 5px 0;
+	color:#01759b;
+	font-size:14px;
+	/*text-transform: uppercase;*/
+}
+
+.param-line h4:first-child{
+	margin-top:0;
+}
+
+.method-param{
+	color:#B1280E;
+}
+
+.syntaxhighlighter {
+	padding: 5px;
+	border: 1px solid #ccc;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.diamonds{
+	position:fixed;
+	width:212px;
+	height:222px;
+	background:url(../assets/images/bg-diamonds.png);
+	left:20px;
+	bottom:40px;
+}

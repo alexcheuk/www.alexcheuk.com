@@ -1,0 +1,93 @@
+/**** CREATE FORM ****/
+
+.rfo-createform-lineitem{
+	width: 540px;
+
+	border: 1px solid #ddd;
+
+	margin: 0 auto;
+	margin-top: 10px;
+	background: #e3e3e3;
+	position:relative;
+	z-index: 10;
+	// display:none;
+}
+
+.rcl-title{
+	background:#cdcdcd;
+	padding: 12px 25px;
+	font-weight: bold;
+	font-size:14px;
+	font-style: italic;
+
+	color:#333;
+}
+
+.rcl-content{
+	padding: 15px 25px 10px 25px;
+}
+
+.rcl-footer{
+	/*padding:15px 25px;*/
+	background:#bdbdbd;
+}
+
+.rcl-footer{
+	line-height:40px;
+	padding-left:25px;
+}
+
+.rcl-submit-btn{
+	float:right;
+	width:140px;
+	background: #25b695;
+}
+
+.rcl-cancel-btn{
+	float:right;
+	width:80px;
+	background: #666;
+}
+
+.rcl-content table{
+	width:100%;
+}
+
+.rcl-content .input--inline{
+	float:left;
+}
+
+.rcl-content td{
+	padding-bottom:15px;
+	vertical-align: middle;
+}
+
+.rcl-tr-label td{
+	color:#666;
+	padding-bottom:5px;
+}
+
+.rcl-product-item{
+	background: #666;
+	color: #fff;
+}
+
+/* QUANTITY */
+
+.td-quantity .selectable{
+	width:100px;
+}
+
+.td-quantity .input--inline{
+	width:130px;
+}
+
+/* PRICE */
+
+.td-price .selectable{
+	width:80px;
+}
+
+.td-price .input--inline{
+	width:159px;
+}

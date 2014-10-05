@@ -1,0 +1,143 @@
+.selectable {
+    display: inline-block;
+    position: relative;
+    background: #eee;
+    cursor: pointer;
+    min-height: 32px;
+    width: 100%;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    border:none;
+}
+
+.selectable--hide{
+    clip     : rect(0 0 0 0) !important;
+    outline  : 0 !important;
+    border   : 0 !important;
+    margin   : 0 !important;
+    padding  : 0 !important;
+    width    : 1px !important;
+    height   : 1px !important;
+    overflow : hidden !important;
+    position : absolute !important;
+    left     : 0 !important;
+    top      : 0 !important;
+}
+
+.selectable--inline{
+	float:left;
+}
+
+.selectable--green{
+	background:#25b695;
+}
+
+.selectable--green .selectable_content{
+	color:#fff;
+	// text-align: center;
+}
+
+.selectable:hover .selectable_arrow-container {
+    background: #1E9277;
+}
+
+.selectable label {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #666;
+}
+
+.selectable:after {
+    content: " ";
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 29px;
+    width: 1px;
+    /*border-right: 1px solid #ddd;*/
+}
+
+.selectable:hover:after {
+    display: none;
+}
+
+.selectable_content {
+    color:#333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    padding: 10px 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.selectable ul {
+    display: none;
+    position: absolute;
+    top: 23px;
+    border-bottom: 1px solid #ddd;
+    min-width: 100%;
+    padding-top: 10px;
+    z-index: 99999;
+}
+
+.selectable li {
+    color:#333;
+    padding: 8px 12px;
+    background: #f3f3f3;
+    width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.selectable li:hover {
+    background: #ddd;
+    color: #333;
+}
+
+.selectable .selected, .selectable .selected:hover {
+    display: inline-block;
+    background: #999;
+    color: #fff;
+}
+
+.selectable_arrow-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: #25b695;
+}
+
+.selectable_arrow-container:after {
+    left: 50%;
+    top: 50%;
+    margin-left: -6px;
+    margin-top: -2px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.selectable_arrow-container:after {
+    border-top-color: #fff;
+    border-width: 6px;
+}
+
+.selectable--placeholder{
+    color:#aaa;
+}

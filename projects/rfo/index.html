@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html ng-app="RFO">
+<head>
+	<title></title>
+	<script src="js/jquery.js"></script>
+	<!-- <script src="js/script.js"></script> -->
+	<script src="src/lib.js"></script>
+
+	<script type="text/javascript" src="js/EventHelpers.js"></script>
+	<script type="text/javascript" src="js/cssQuery-p.js"></script>
+	<script type="text/javascript" src="js/jcoglan.com/sylvester.js"></script>
+	<script type="text/javascript" src="js/cssSandpaper.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body ng-switch="progress" ng-cloak>
+<div class="wrapper">
+	<div class="rfo-title">ORDER REQUISITION</div>
+	<div class="rfo-progression rfo-progression--{{progress}}"></div>
+
+	<div class="rfo-department-wrapper" ng-controller="DepartmentCtrl" ng-switch-when="1">
+		<div class="rfo-input-department">
+			<select class="selectable" placeholder="choose a department ..." ui-selectable ng-model="department.department_id">
+				<option value="Maintainence">Marketing</option>
+				<option value="Entertainment">I.T.</option>
+				<option value="Multi">Operations</option>
+			</select>
+		</div>
+		<div class="btn-department-next rfo-btn" ng-click="department.nextStep()" ng-class="{'rfo-btn--disabled' : !department.department_id }">NEXT</div>
+		<div class="clear"></div>
+ 	</div>
+
+	<div class="rfo-searchbar-wrapper" ng-controller="SearchCtrl" ng-switch-when="2" >
+		<input type="text" placeholder="I'm looking for..." class="rfo-input rfo-input-search" ng-model="search.search_value" on-search/>
+
+		<div class="rfo-btn rfo-searchbar-icon">
+			<i class="icon-search"></i>
+		</div>
+		<div class="rfo-btn rfo-searchbar-catalog">
+			<i class="icon-shopping-cart"></i>
+		</div>
+	</div>
+
+	<div class="rfo-result-wrapper" ng-controller="ResultCtrl" ng-class="{'active' : showResult}" >
+		<div class="rrw-loader" ng-show="searching">
+			<i class="icon-spinner icon-spin icon-large icon-4x"></i><br/>
+			SEARCHING CATALOG ...
+		</div>
+
+		<div ng-show="!searching">
+			<div class="rrw_up_arrow"></div>
+			<div class="rrw rrw--catalog">
+				<div class="rrw_left">
+					<span class="rrw_left_label rotate">CATALOG</span>
+					<div class="rrw_arrow"></div>
+				</div>
+				<div class="rrw_right">
+					<ul class="rrw-itemlist">
+						<li ng-repeat="item in result_list.catalog" ng-click="onCatalogClick(item.id)">
+							<div class="rrw-itemlist-name">
+								<!-- Dell 15.6" <span class="keyword">laptop</span> bag -->
+								{{item.name}}
+							</div>
+							<div class="rrw-itemlist-price">
+								{{item.price | MoneyFormat}}
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="rrw rrw--staples">
+				<div class="rrw_right">
+					Browse <span class="keyword">STAPLES'</span> catalog for deals up to 60%
+				</div>
+			</div>
+
+			<div class="rrw rrw--recreate">
+				<div class="rrw_left">
+					<span class="rrw_left_label rotate">RECREATE</span>
+					<div class="rrw_arrow"></div>
+				</div>
+				<div class="rrw_right">
+					<ul class="rrw-itemlist">
+						<li ng-repeat="po in result_list.recreate">
+							<div class="rrw-itemlist-name">
+								PO# {{po.id}}
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div style="clear:both;"></div>
+	</div>
+
+	<div class="rfo-createform-lineitem" ng-controller="CreateCtrl" ng-switch-when="3">
+		<div class="rcl-product-item rcl-title">Dell 15" laptop</div>
+		<div class="rcl-title">HOW MANY DO YOU NEED?</div>
+		<div class="rcl-content">
+			<table>
+				<tr class="rcl-tr-label">
+					<td width="250">HOW MANY? (QUANTITY)</td>	
+						<td width="20"></td>	
+						<td width="250">ESTIMATED PRICE</td>
+				</tr>
+				<tr>
+					<td class="td-quantity">
+						<input class="rfo-input input--inline" type="text">
+
+						<select class="selectable selectable--inline selectable--green" ui-selectable>
+							<option value="Maintainence">BOXES</option>
+							<option value="Entertainment">CRATES</option>
+							<option value="Multi">UNITS</option>
+						</select>
+					</td>	
+					<td></td>	
+					<td class="td-price">
+						<input class="rfo-input input--inline" type="text">
+						<select class="selectable selectable--inline selectable--green" ui-selectable>
+							<option value="Maintainence">CAD</option>
+							<option value="Entertainment">USD</option>
+							<option value="Multi">EUR</option>
+						</select>
+					</td>	
+				</tr>
+			</table>	
+		</div>
+		<div class="rcl-title">ITEM DESCRIPTION</div>
+		<div class="rcl-content">
+			<table>
+				<tr class="rcl-tr-label">
+					<td width="320">WHO MAKES IT? (VENDOR)</td>	
+						<td width="20"></td>	
+						<td width="180">SKU</td>	
+				</tr>
+				<tr>
+					<td>
+						<select class="selectable" ui-selectable>
+							<option value="Maintainence">Best Buy</option>
+							<option value="Entertainment">Future Shop</option>
+							<option value="Multi">Procurify Lite</option>
+						</select>
+					</td>	
+					<td></td>	
+					<td>
+						<input class="rfo-input" type="text">
+					</td>	
+				</tr>
+				<tr class="rcl-tr-label">
+					<td width="320">ANY COMMENTS?</td>	
+						<td width="20"></td>	
+						<td width="180">HAVE PICTURES OR DOCS?</td>	
+				</tr>
+				<tr>
+					<td>
+						<input class="rfo-input" type="text">
+					</td>	
+					<td></td>	
+					<td>
+						<input class="rfo-input" type="text">
+					</td>	
+				</tr>
+			</table>
+		</div>
+		<div class="rcl-title">CATAGORY <span style="color:#666">&amp;</span> PROJECT CODE</div>
+		<div class="rcl-content">
+			<table>
+				<tr class="rcl-tr-label">
+					<td width="320">CATAGORY</td>	
+					<td width="20"></td>	
+					<td width="180">PROJECT CODE</td>	
+				</tr>
+				<tr>
+					<td>
+						<select class="selectable" ui-selectable>
+							<option value="Maintainence">Software Licence</option>
+							<option value="Entertainment">Office Supplies</option>
+							<option value="Multi">I.T. Equipment</option>
+							<option value="1">Promotional Materials</option>
+						</select>
+					</td>	
+					<td></td>	
+					<td>
+						<input type="text" name="input-project-code" class="rfo-input " autofocus>
+					</td>	
+				</tr>
+			</table>	
+		</div>
+		<div class="rcl-footer">
+			<span>* field must be filled to add a line item.</span>
+			<div class="rcl-submit-btn rfo-btn" ng-click="create.AddItem()">+ ADD LINE ITEM</div>
+			<div class="rcl-cancel-btn rfo-btn" ng-click="create.prevStep()">CANCEL</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+</div>
+
+<div class="cart-wrapper" ng-controller="CartCtrl" ng-class="{'cart-wrapper--expanded' : cart.expanded}">
+	<div class="cart-wrapper__expanded">
+		<div class="cwe-title">
+			SHOPPING CART LIST
+			<div class="cwe-receipt-edges"></div>
+		</div>
+		<ul class="cart-list">
+			<li ng-repeat="item in cart.items track by $index">
+				<div class="cart-list__item">{{item.name}}</div>
+				<div class="cart-list__price"><em>PRICE</em>{{item.price | MoneyFormat}}</div>
+				<div class="cart-list__qty"><em>QTY</em>{{item.quantity}}</div>
+				<div class="clear"></div>
+
+				<div class="cart-list__btn cart-list__btn-return"></div>
+				<div class="cart-list__btn cart-list__btn-delete" ng-click="cart.deleteItem($index)"></div>
+			</li>
+		</ul>
+
+		
+
+		<div class="cart-summary-wrapper">
+			<div style="float:left; width:125px; margin-right:10px;">
+				<label class="rfo-input-label">DATE REQUIRED *</label>
+				<input class="rfo-input"/>
+			</div>
+
+			<div style="float:left; width:125px">
+				<label class="rfo-input-label">INVOICING DATE *</label>
+				<input class="rfo-input"/>
+			</div>
+
+			<div class="clear"></div>
+
+			<label class="rfo-input-label">NEXT APPROVER *</label>
+			<select class="selectable" ui-selectable>
+				<option>Jax Teller</option>
+				<option>Clay Morrow</option>
+			</select>
+
+			<div class="csw-total-item">
+				<table width="100%">
+					<tr>
+						<td style="font-size:12px;">NUMBER OF ITEMS</td>
+						<td style="font-size:20px;font-weight:bold; text-align:right">4</td>
+					</tr>
+				</table>
+			</div>
+			<div class="csw-total-cost">
+				<table width="100%">
+					<tr>
+						<td style="font-size:20px;font-weight:bold;">TOTAL</td>
+						<td style="font-size:20px;font-weight:bold; text-align:right">$20,000.00</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="csw-btn-submit">
+				CHECK OUT
+			</div>
+		</div>
+	</div>
+	<div class="cw-expand-btn unselectable" ng-click="cart.ToggleCart()">
+		<i class="icon-exchange"></i>
+		<br/>
+		<i class="icon-shopping-cart"></i>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>

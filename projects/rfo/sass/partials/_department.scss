@@ -1,0 +1,35 @@
+/* DEPARTMENT */
+
+.rfo-department-wrapper{
+	width:542px;
+	margin:0 auto;
+}
+
+.rfo-input-department{
+	width:542px;
+	display:block;
+	margin:0 auto;
+}
+
+.rfo-input-department .selectable{
+	background: #fff;
+	height:38px;
+
+	border:1px solid #ddd;
+	background:#f9f9f9;
+}
+
+.rfo-input-department .selectable ul{
+	top: 32px;
+}
+
+.rfo-input-department .selectable_content{
+	font-size:16px;
+}
+
+.btn-department-next{
+	background-color: #25b695;
+	padding:0 20px;
+	margin-top:10px;
+	float:right;
+}

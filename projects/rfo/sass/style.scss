@@ -1,0 +1,117 @@
+body{
+	font-family: Arial;
+	font-size:12px;
+	background:#f2f2f2;
+	color:#333;
+}
+
+.wrapper{
+	width:960px;
+	margin: 30px auto;
+	background:#f2f2f2;
+	padding:20px;
+}
+
+.clear{
+	clear:both;
+}
+
+.unselectable{
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+.rfo-input{
+	outline: none;
+	border: none;
+
+	color: #333;
+	background: #f4f4f4;
+	
+	width:100%;
+	padding: 8px;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+}
+
+.rfo-input-label{
+	color:#666;
+	padding-bottom:5px;
+	display:block;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/***************************/
+
+.rfo-title{
+	text-align: center;
+	font-size:22px;
+}
+
+.rfo-progression{
+	width: 265px;
+	height:39px;
+	background:url(../images/progression-sprite.png) no-repeat;
+	background-position:0 0;
+
+	margin:0 auto;
+	margin-bottom:60px;
+	margin-top:20px;
+	position:relative;
+}
+
+.rfo-progression--2{
+	background-position:0 39px;
+}
+
+.rfo-progression::after{
+	content: "department";
+	text-transform: uppercase;
+
+	color:#666;
+	font-size:11px;
+
+	position: absolute;
+	margin-top:5px;
+	top: 100%;
+	left: -12px;
+
+	-webkit-transition: 0.5s all;
+}
+
+.rfo-progression--2{
+	background-position: 0 -39px;
+}
+
+.rfo-progression--2::after{
+	content: "search";
+	left:50%;
+	margin-left:-20px;
+}
+
+.rfo-progression--3{
+	background-position: 0 -78px;
+}
+
+.rfo-progression--3::after{
+	content: "create";
+	left: 246px;
+	margin-left:-20px;
+}
+
+@import 'partials/buttons';
+@import 'partials/search';
+@import 'partials/department';
+@import 'partials/create_form';
+@import 'partials/selectable';
+@import 'partials/cart';
+
