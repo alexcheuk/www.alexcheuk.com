@@ -41,7 +41,7 @@ function base_url(){
 		<div id="home-wrapper" >
 			<div class="logo"><img src="./image/logo.png" width="222"></div>
 			<div class="card"
-				<h1>Alex Cheuk<span class="title">web & mobile developer</span> <?php echo $project ?></h1>
+				<h1>Alex Cheuk<span class="title">web & mobile developer XD</span> <?php echo $project ?></h1>
 				<table cellspacing="0" cellspadding="0">
 					<tr>
 						<td>email:</td>
